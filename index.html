@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>East Projects</title>
+    <title>East Projects - クリエイティブエージェンシー</title>
 
     <!-- Meta Tags -->
     <meta name="description" content="East Projectsは、動画制作・編集、企画提案を行うクリエイティブエージェンシーです。">
     <meta name="keywords" content="動画制作, 映像編集, クリエイティブ, East Projects">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#00bcd4">
 
     <!-- OGP -->
     <meta property="og:title" content="East Projects">
@@ -30,14 +30,28 @@
 </head>
 
 <body>
+    <!-- スキップリンク -->
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
+    <!-- スクロールプログレス -->
+    <div class="scroll-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="scroll-progress-bar"></div>
+    </div>
 
     <!-- 🔹 ヘッダー -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="header-logo">
-            <a href="#"><img src="./assets/images/EASTProjects_mark-2.svg" alt="East Projects ロゴ"></a>
+            <a href="#" aria-label="East Projects ホーム">
+                <img src="./assets/images/EASTProjects_mark-2.svg" alt="East Projects ロゴ" width="150" height="40">
+            </a>
         </div>
-        <nav class="header-nav">
-            <ul class="header-nav-list">
+        <nav class="header-nav" role="navigation" aria-label="メインナビゲーション">
+            <button class="header-menu-button" aria-label="メニュー" aria-expanded="false" aria-controls="nav-menu">
+                <span class="header-menu-line"></span>
+                <span class="header-menu-line"></span>
+                <span class="header-menu-line"></span>
+            </button>
+            <ul class="header-nav-list" id="nav-menu">
                 <li class="header-nav-item"><a href="#about">About</a></li>
                 <li class="header-nav-item"><a href="#feature">Feature</a></li>
                 <li class="header-nav-item"><a href="#member">Member</a></li>
@@ -47,107 +61,134 @@
     </header>
 
     <!-- 🔹 ヒーローセクション -->
-    <section id="hero" class="hero">
-        <video class="hero-video" autoplay loop muted preload aria-label="背景動画">
-            <source src="./assets/images/headerVideo_resized.mp4" type="video/mp4">
+    <section id="hero" class="hero" role="region" aria-label="ヒーローセクション">
+        <video class="hero-video" autoplay loop muted playsinline preload="auto" aria-hidden="true">
+            <source src="./assets/images/headerVideo_optimized.mp4" type="video/mp4">
         </video>
-        <div class="hero-overlay"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content">
-            <h1 class="hero-title">East Projects</h1>
-            <p class="hero-subtitle">クリエイティブな動画制作と企画提案</p>
-            <a href="#about" class="hero-scroll">
+            <h1 class="hero-title" data-animate>East Projects</h1>
+            <p class="hero-subtitle" data-animate>クリエイティブな動画制作と企画提案</p>
+            <a href="#about" class="hero-scroll" aria-label="下にスクロール">
                 <span class="hero-scroll-text">Scroll Down</span>
-                <span class="hero-scroll-arrow"></span>
+                <span class="hero-scroll-arrow" aria-hidden="true"></span>
             </a>
         </div>
     </section>
 
     <!-- 🔹 メインコンテンツ -->
-    <main class="container">
+    <main id="main-content" class="container" role="main">
         <!-- 🔹 About -->
-        <section id="about" class="section">
+        <section id="about" class="section" role="region" aria-labelledby="about-title">
             <div class="section-header">
-                <h2 class="section-headline">About</h2>
-                <p class="section-description">映像制作と企画提案でビジョンを形に</p>
+                <h2 id="about-title" class="section-headline" data-animate>About</h2>
+                <p class="section-description" data-animate>映像制作と企画提案でビジョンを形に</p>
             </div>
-            <div class="about-content grid grid-col-2">
-                <img src="./assets/images/image01-1.webp" alt="East Projectsについて">
-                <p>私たちは、映像制作と企画提案を通じて、クライアントのビジョンを現実にします。</p>
+            <div class="about-content grid grid-col-2" data-animate>
+                <img src="./assets/images/image01-1.webp" alt="East Projectsのチーム作業風景" width="600" height="400">
+                <p>私たちは、映像制作と企画提案を通じて、クライアントのビジョンを現実にします。最新の技術と創造力を組み合わせ、魅力的なコンテンツを制作いたします。</p>
             </div>
         </section>
 
         <!-- 🔹 Feature -->
-        <section id="feature" class="section section-secondary">
+        <section id="feature" class="section section-secondary" role="region" aria-labelledby="feature-title">
             <div class="section-header">
-                <h2 class="section-headline">Features</h2>
-                <p class="section-description">プロフェッショナルな映像制作と企画</p>
+                <h2 id="feature-title" class="section-headline" data-animate>Features</h2>
+                <p class="section-description" data-animate>プロフェッショナルな映像制作と企画</p>
             </div>
             <div class="feature-grid grid grid-col-2">
-                <div class="feature">
-                    <img class="feature-img" src="./assets/images/001-settings.webp" alt="動画制作・編集">
+                <div class="feature" data-animate>
+                    <img class="feature-img" src="./assets/images/001-settings.webp" alt="" aria-hidden="true" width="80" height="80">
                     <h3 class="feature-title">動画制作・編集</h3>
-                    <p class="feature-description">映像でリアルに伝え、施設の魅力を最大限に引き出します。</p>
+                    <p class="feature-description">映像でリアルに伝え、施設の魅力を最大限に引き出します。4K画質対応、ドローン撮影など、最新の技術を駆使した高品質な映像制作をご提供します。</p>
                 </div>
-                <div class="feature">
-                    <img class="feature-img" src="./assets/images/002-layout.webp" alt="企画提案">
+                <div class="feature" data-animate>
+                    <img class="feature-img" src="./assets/images/002-layout.webp" alt="" aria-hidden="true" width="80" height="80">
                     <h3 class="feature-title">企画提案</h3>
-                    <p class="feature-description">ヒアリングを基に、最適な映像制作を企画・提案します。</p>
+                    <p class="feature-description">ヒアリングを基に、最適な映像制作を企画・提案します。マーケティング戦略から具体的な実施計画まで、トータルでサポートいたします。</p>
                 </div>
             </div>
         </section>
 
         <!-- 🔹 Member -->
-        <section id="member" class="section">
+        <section id="member" class="section" role="region" aria-labelledby="member-title">
             <div class="section-header">
-                <h2 class="section-headline">Members</h2>
-                <p class="section-description">プロフェッショナルなチーム紹介</p>
+                <h2 id="member-title" class="section-headline" data-animate>Members</h2>
+                <p class="section-description" data-animate>プロフェッショナルなチーム紹介</p>
             </div>
             <div class="member-grid grid grid-col-2">
-                <div class="member-card">
-                    <img src="./assets/images/image_Aki.webp" alt="Higashi Akimitsu">
-                    <h3 class="member-name">Higashi Akimitsu</h3>
-                    <p class="member-role">映像クリエイター</p>
-                    <p class="member-description">Cinematic映像を中心に活動。</p>
-                </div>
-                <div class="member-card">
-                    <img src="./assets/images/image_Mary.webp" alt="Mary">
-                    <h3 class="member-name">Mary</h3>
-                    <p class="member-role">撮影 & 編集</p>
-                    <p class="member-description">クライアントの要望に応じた映像制作を行う。</p>
-                </div>
+                <article class="member-card" data-animate>
+                    <img src="./assets/images/image_Aki.webp" alt="" width="300" height="300">
+                    <div class="member-info">
+                        <h3 class="member-name">Higashi Akimitsu</h3>
+                        <p class="member-role">映像クリエイター</p>
+                        <p class="member-description">Cinematic映像を中心に活動。映画やCMの制作経験を活かし、魅力的な映像表現を追求しています。</p>
+                    </div>
+                </article>
+                <article class="member-card" data-animate>
+                    <img src="./assets/images/image_Mary.webp" alt="" width="300" height="300">
+                    <div class="member-info">
+                        <h3 class="member-name">Mary</h3>
+                        <p class="member-role">撮影 & 編集</p>
+                        <p class="member-description">クライアントの要望に応じた映像制作を行う。独自の視点と技術で、印象的な作品を生み出します。</p>
+                    </div>
+                </article>
             </div>
         </section>
 
         <!-- 🔹 Contact -->
-        <section id="contact" class="section section-secondary">
+        <section id="contact" class="section section-secondary" role="region" aria-labelledby="contact-title">
             <div class="section-header">
-                <h2 class="section-headline">Contact</h2>
-                <p class="section-description">お問い合わせはこちら</p>
+                <h2 id="contact-title" class="section-headline" data-animate>Contact</h2>
+                <p class="section-description" data-animate>お問い合わせはこちら</p>
             </div>
-            <form class="contact-form">
-                <label for="name">お名前</label>
-                <input type="text" id="name" name="name" required>
+            <form class="contact-form" data-animate novalidate>
+                <div class="form-group">
+                    <label for="name" class="form-label">お名前</label>
+                    <input type="text" id="name" name="name" class="form-input" required
+                           aria-required="true" aria-describedby="name-error">
+                    <div id="name-error" class="error-message" aria-live="polite"></div>
+                </div>
 
-                <label for="email">メールアドレス</label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="email" class="form-label">メールアドレス</label>
+                    <input type="email" id="email" name="email" class="form-input" required
+                           aria-required="true" aria-describedby="email-error">
+                    <div id="email-error" class="error-message" aria-live="polite"></div>
+                </div>
 
-                <label for="message">メッセージ</label>
-                <textarea id="message" name="message" required></textarea>
+                <div class="form-group">
+                    <label for="message" class="form-label">メッセージ</label>
+                    <textarea id="message" name="message" class="form-input" required
+                            aria-required="true" aria-describedby="message-error"></textarea>
+                    <div id="message-error" class="error-message" aria-live="polite"></div>
+                </div>
 
-                <button type="submit">送信する</button>
+                <button type="submit" class="form-button">
+                    送信する
+                    <span class="visually-hidden">お問い合わせフォームを送信</span>
+                </button>
+
+                <div class="form-feedback" aria-live="polite"></div>
             </form>
         </section>
     </main>
 
     <!-- 🔹 フッター -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <p>© 2024 East Projects</p>
-        <nav class="footer-nav">
-            <a href="https://twitter.com/" target="_blank">Twitter</a>
-            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+            <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+                Twitter
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+                Instagram
+            </a>
         </nav>
     </footer>
 
+    <!-- Scripts -->
+    <script src="./assets/scripts/main.js" type="module"></script>
 </body>
 
 </html>
